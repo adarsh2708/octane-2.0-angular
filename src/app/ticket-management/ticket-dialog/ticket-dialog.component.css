@@ -1,0 +1,43 @@
+.ticket-input {
+  width: 100%;
+  padding: 10px;
+  font-size: 16px;
+  border-radius: 6px;
+  border: 1px solid #ccc;
+  margin-bottom: 15px;
+  box-sizing: border-box;
+  font-family: 'Arial', sans-serif;
+  background-color: #f9f9f9;
+  color: #333;
+}
+
+.dialog-actions button {
+  margin-left: 8px;
+}
+
+.mat-dialog-container {
+  border-radius: 12px; /* rounded corners */
+  padding: 20px;
+  background-color: #fff;
+  box-shadow: 0 8px 20px rgba(0,0,0,0.2);
+}
+
+.mat-dialog-title {
+  font-size: 20px;
+  font-weight: 600;
+  color: #222;
+}
+
+.mat-dialog-content {
+  margin-top: 10px;
+  margin-bottom: 15px;
+}
+.ticket-input:focus {
+  border-color: #3f51b5; /* Material primary color */
+  outline: none;
+  box-shadow: 0 0 5px rgba(63, 81, 181, 0.5);
+}
+
+.dialog-actions button:hover {
+  opacity: 0.9;
+}

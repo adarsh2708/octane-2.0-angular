@@ -86,3 +86,10 @@
     </div>
 </div>
 
+
+<app-ticket-modal
+  [ticketId]="selectedTicketId"
+  [visible]="modalVisible"
+  (okClick)="onOk()"
+  (cancelClick)="onCancel()">
+</app-ticket-modal>

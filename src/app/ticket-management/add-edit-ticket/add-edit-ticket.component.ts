@@ -1,9 +1,11 @@
-import { Component, OnInit } from '@angular/core';
+import { ChangeDetectorRef, Component, OnInit } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { Router } from '@angular/router';
 import { TicketService } from 'src/app/services/ticket.service';
 import { Location } from '@angular/common';
 import { ToastrService } from 'ngx-toastr';
+import { MatDialog } from '@angular/material/dialog';
+import { TicketDialogComponent } from '../ticket-dialog/ticket-dialog.component';
 
 @Component({
   selector: 'app-add-edit-ticket',
@@ -14,6 +16,8 @@ export class AddEditTicketComponent implements OnInit {
   ticketForm!: FormGroup;
   tags: string[] = [];
   isTagInvalid: boolean = false;
+  selectedTicketId: string | undefined;
+  modalVisible = false;
   departments = [
     { id: 1, name: 'IT' },
     { id: 2, name: 'HR' },
@@ -22,12 +26,12 @@ export class AddEditTicketComponent implements OnInit {
   prioritylist = [
     { id: 1, name: 'Low' },
     { id: 2, name: 'Medium' },
-    { id: 3, name: 'Priority' }
+    { id: 3, name: 'High' }
   ];
 
   applications: { id: number; name: string }[] = [];
 
-  constructor(private fb: FormBuilder, private ticketService: TicketService, private router: Router, private location: Location, private toastr: ToastrService) { }
+  constructor(private fb: FormBuilder,private dialog: MatDialog,private ticketService: TicketService, private router: Router, private location: Location, private toastr: ToastrService,private cd:ChangeDetectorRef) { }
 
   ngOnInit(): void {
     this.ticketForm = this.fb.group({
@@ -38,34 +42,20 @@ export class AddEditTicketComponent implements OnInit {
       tags: [''],
       type: ['User Story']
     });
-    this.onDepartmentChange('1');
+    this.getDepartment();
 
     this.ticketForm.get('department')?.valueChanges.subscribe(dept => {
-      this.onDepartmentChange(dept);
+      // this.onDepartmentChange(dept);
     });
   }
 
-  onDepartmentChange(departmentId: string) {
-    debugger
-    if (departmentId === '1') { // IT
-      this.applications = [
-        { id: 101, name: 'App1' },
-        { id: 102, name: 'App2' }
-      ];
-    } else if (departmentId === '2') { // HR
-      this.applications = [
-        { id: 201, name: 'App3' },
-        { id: 202, name: 'App4' }
-      ];
-    } else {
-      this.applications = [];
-    }
+  getDepartment() {
     this.ticketService.getApps().subscribe(
       (res) => {
-        // this.applications = res;
+        this.applications = res;
       },
       (error) => {
-
+        this.applications = [];
       }
     );
   }
@@ -107,19 +97,27 @@ export class AddEditTicketComponent implements OnInit {
       tags: this.tags.join(';')
     };
     console.log(JSON.stringify(payload));
-    this.toastr.success('Ticket created successfully', 'Success');
-    // this.ticketService.addTickit(payload).subscribe(
-    //   (res) => {
-    //     console.log(res);
-    //     this.toastr.success('Ticket created successfully', 'Success');
-    //     this.navigateToList();
-    //   },
-    //   (error) => {
-    //     console.log(error);
-    //     this.toastr.error('Something went wrong', 'Error');
-    //   }
-    // );
-    this.navigateToList();
+    this.ticketService.addTickit(payload).subscribe(
+      (res) => {
+        const ticketId = res?.id;
+        const dialogRef = this.dialog.open(TicketDialogComponent, {
+    width: '300px',
+    data: { ticketId }
+  });
+
+  dialogRef.afterClosed().subscribe(result => {
+    if (result === 'ok') {
+      console.log('User clicked OK');
+    } else if (result === 'cancel') {
+      console.log('User clicked Cancel');
+    }
+  });
+     },
+      (error) => {
+        console.log(error);
+        this.toastr.error('Something went wrong', 'Error');
+      }
+    );
   }
 
   navigateToList() {
@@ -129,4 +127,12 @@ export class AddEditTicketComponent implements OnInit {
   goBack() {
     this.location.back();
   }
+
+  onOk() {
+    this.modalVisible = false;
+}
+
+onCancel() {
+    this.modalVisible = false;
+}
 }

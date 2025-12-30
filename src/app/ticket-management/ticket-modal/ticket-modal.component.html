@@ -1,0 +1,11 @@
+<div class="modal-backdrop" *ngIf="visible">
+  <div class="modal">
+    <h3>Ticket ID</h3>
+    <input type="text" [value]="ticketId" readonly #ticketInput style="width:100%; margin-bottom:10px;">
+    <div class="buttons">
+      <button (click)="copy(ticketInput)">Copy</button>
+      <button (click)="ok()">OK</button>
+      <button (click)="cancel()">Cancel</button>
+    </div>
+  </div>
+</div>

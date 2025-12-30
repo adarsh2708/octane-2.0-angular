@@ -6,12 +6,17 @@ import { CommonModule } from '@angular/common';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { HttpClientModule } from '@angular/common/http';
 import { MatIconModule } from '@angular/material/icon';
+import { TicketModalComponent } from './ticket-modal/ticket-modal.component';
+import { TicketDialogComponent } from './ticket-dialog/ticket-dialog.component';
+import { MatDialogModule } from '@angular/material/dialog';
 
 
 @NgModule({
   declarations: [
     TicketListComponent,
-    AddEditTicketComponent
+    AddEditTicketComponent,
+    TicketModalComponent,
+    TicketDialogComponent
   ],
   imports: [
     TicketManagementRoutingModule,
@@ -19,7 +24,8 @@ import { MatIconModule } from '@angular/material/icon';
     FormsModule,
     ReactiveFormsModule,
     HttpClientModule,
-    MatIconModule
+    MatIconModule,
+    MatDialogModule,
   ],
   exports: [],
   providers: [],

@@ -21,8 +21,12 @@ export class AppConfigService {
     return this.config.ipKey;
   }
 
+  // get workITemsUrl(): string {
+  //   return `${this.config.ssl}://${this.config.ipKey}:${this.config.workITems}/`;
+  // }
   get workITemsUrl(): string {
-    return `${this.config.ssl}://${this.config.ipKey}:${this.config.workITems}/`;
+    let data = 'localhost:7290';
+    return `${this.config.ssl}://${data}/`;
   }
 
 }
