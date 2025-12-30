@@ -1,0 +1,88 @@
+<div class="card">
+    <div class="card-header d-flex justify-content-between align-items-center">
+       <h5 class="fw-bold">Add Ticket</h5>
+       <button mat-icon-button (click)="goBack()">
+  <mat-icon tyle="font-size: 16px;">arrow_back</mat-icon>
+</button>
+    </div>
+    <div class="card-body">
+        <form [formGroup]="ticketForm">
+            <div class="row">
+                <div class="col-sm-4 mb-3">
+                    <label class="form-label">Application</label>
+                    <select class="form-control" formControlName="areaPath" [ngClass]="{'is-invalid': ticketForm.get('areaPath')?.invalid && (ticketForm.get('areaPath')?.touched || ticketForm.get('areaPath')?.dirty)}">
+                        <option value="">Select Application</option>
+                        <option *ngFor="let app of applications" [value]="app.name">{{app.name}}</option>
+                    </select>
+                    <div class="invalid-feedback"
+                        *ngIf="ticketForm.get('areaPath')?.errors?.['required'] &&(ticketForm.get('areaPath')?.touched || ticketForm.get('areaPath')?.dirty)">
+                        Application is required
+                    </div>
+                </div>
+
+                <div class="col-sm-4 mb-3">
+                    <label class="form-label">Title</label>
+                    <input type="text" class="form-control" formControlName="title" [ngClass]="{'is-invalid': ticketForm.get('title')?.invalid && (ticketForm.get('title')?.touched || ticketForm.get('title')?.dirty)}">
+                    <div class="invalid-feedback"
+                        *ngIf="ticketForm.get('title')?.errors?.['required'] &&(ticketForm.get('title')?.touched || ticketForm.get('title')?.dirty)">
+                        Title is required
+                    </div>
+                </div>
+
+                 <div class="col-sm-4 mb-3">
+                    <label class="form-label">Priority</label>
+                    <select class="form-control" formControlName="priority" [ngClass]="{'is-invalid': ticketForm.get('priority')?.invalid && (ticketForm.get('priority')?.touched || ticketForm.get('priority')?.dirty)}">
+                        <option value="">Select Priority</option>
+                        <option *ngFor="let priority of prioritylist" [value]="priority.id">{{priority.name}}</option>
+                    </select>
+                     <div class="invalid-feedback"
+                        *ngIf="ticketForm.get('priority')?.errors?.['required'] &&(ticketForm.get('priority')?.touched || ticketForm.get('priority')?.dirty)">
+                        Priority is required
+                    </div>
+                </div>
+
+                 <div class="col-sm-4 mb-3">
+                    <label class="form-label">Tags</label>
+
+                    <div class="tag-input">
+                        <input type="text" class="form-control" placeholder="Type tag and press Enter"
+                            (keydown.enter)="addTag($event)" [ngClass]="{'is-invalid': isTagInvalid}"/>
+                            <span class="tag" *ngFor="let tag of tags; let i = index">
+                            {{ tag }}
+                            <button type="button" (click)="removeTag(i)">×</button>
+                        </span>
+                            <div class="invalid-feedback"
+                        *ngIf="isTagInvalid">
+                        Tag is required
+                    </div>
+                    </div>
+                </div>
+
+
+
+                <div class="col-sm-4 mb-3">
+                    <label class="form-label">Description</label>
+                    <textarea class="form-control" formControlName="description" rows="1" [ngClass]="{'is-invalid': ticketForm.get('description')?.invalid && (ticketForm.get('description')?.touched || ticketForm.get('description')?.dirty)}"></textarea>
+                    <div class="invalid-feedback"
+                        *ngIf="ticketForm.get('description')?.errors?.['required'] &&(ticketForm.get('description')?.touched || ticketForm.get('description')?.dirty)">
+                        Description is required
+                    </div>
+                    <div class="invalid-feedback" *ngIf="
+  ticketForm.get('description')?.errors?.['maxlength'] &&
+  (ticketForm.get('description')?.touched || ticketForm.get('description')?.dirty)
+">
+  Description cannot exceed 500 characters
+</div>
+                </div>
+
+               
+               
+            </div>
+        </form>
+    </div>
+    <div class="card-footer">
+        <button class="save-btn" type="submit" (click)="submit()">Create Ticket</button>
+
+    </div>
+</div>
+

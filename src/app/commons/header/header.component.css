@@ -1,0 +1,113 @@
+.nav-header {
+    position: fixed;
+    width: 100%;
+}
+
+#btn-menu-shrunk {
+    width: 60px !important;
+    cursor: pointer;
+}
+
+#btn-menu-expand {
+    width: 200px !important;
+    cursor: pointer;
+}
+
+header .badge {
+    border-radius: 50px;
+}
+
+.ht-22 {
+    height: 22px;
+}
+
+.mb-8 {
+    margin-bottom: 8px;
+}
+
+.header-icon {
+    margin: 5px;
+    height: 25px;
+    width: 25px;
+}
+
+.user-icon {
+    padding-left: 5px;
+    cursor: pointer;
+}
+.header-icon-wrapper{
+ position: relative;   
+ cursor: pointer;
+}
+.um-count-badge{
+    position: absolute;
+    top: 0;
+    right: 0;
+    background: red;
+    font-weight: 400;
+    height: 19px;
+    width: 20px;
+    border-radius: 50px !important;
+    padding: 2px;
+    border:2px solid #fff;
+    font-size: 11px;
+}
+.disabled-icon{
+    opacity: 0.4;
+    cursor: not-allowed !important;
+}
+.disabled-icon img{
+    cursor: not-allowed !important;
+}
+
+.user-icon{
+    width: 44px;
+    height: 44px;
+    margin-right: 10px;
+    transition: .2s ease;
+}
+
+.user-icon:hover{
+    transform: scale(1.2 , 1.2);
+  }
+.user-icon:active{
+    transform: scale(1 , 1);
+  }
+.user-icon-default {
+    fill: #3a001e;
+  }
+
+  .user-icon-orange {
+    fill: #ff8103;
+  }
+
+  .user-icon-green {
+    fill: #11a903;
+  }
+  @media(max-width:768px){
+    #btn-menu-expand{
+        width: 100% !important;
+    }
+    .custom-sidebar-wrapper{
+        width: 100vw !important;
+    }
+  }
+
+  .svg-size-test{
+    height: 25px;
+    width: 25px;
+    margin: 0px 5px;
+    transition: .1s ease;
+  }
+  .svg-size-test:hover{
+    transform: scale(1.2,1.2);
+  }
+  .svg-size-test:active{
+    transform: scale(1,1);
+  }
+  .svg-size-test-color{
+    fill: #3a001e;
+  }
+  .oxygen-app  section.bg-red{
+background-color: #409EDA !important;
+  }

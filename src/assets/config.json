@@ -1,0 +1,8 @@
+{
+    "ipKey": "192.168.40.162",
+    "workITems": 85,
+    "frontendUrl": "http://localhost:4200",
+    "ssl": "http",
+    "sslforexternalproject": "http",
+    "deployEnv": true
+}

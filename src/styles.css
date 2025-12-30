@@ -1,1 +1,1451 @@
+@import './umedex.css';
+@import './css/umedex-xxl.css';
 /* You can add global styles to this file, and also import other style files */
+
+/* .title{
+    font-size: 20px !important;
+}
+.p-l-10{
+    padding-top: 3rem;
+}
+.text-align{
+    text-align: center;
+}
+.app-container {
+    display: flex;
+    height: 100vh;
+  } 
+html, body { height: 100%; }
+body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; } */
+body {
+  font-family: "Open Sans", sans-serif;
+  font-optical-sizing: auto;
+  font-style: normal;
+  font-variation-settings: "wdth" 100;
+}
+
+.global-section {
+  position: absolute;
+  width: 99%;
+  height: 100%;
+  padding-left: 60px;
+  /* z-index: -1; */
+  background-color: #fff;
+  top: 0;
+}
+
+app-header {
+  z-index: 1;
+}
+
+footer {
+  position: fixed;
+  bottom: 0;
+  width: 100%;
+  background: #EA2427;
+  z-index: 1;
+}
+
+.footer-icon-group {
+  padding: 10px;
+}
+
+.btn-group button {
+  background: none;
+  border: none;
+  padding: 0;
+}
+
+.btn-group button:hover,
+.btn-group button:visited,
+.btn-group button:focus,
+.btn-group button:active,
+.btn-group button:focus-within {
+  background: none !important;
+  border: none !important;
+}
+
+footer .dropup .dropdown-toggle::after {
+  display: none;
+}
+
+@media (max-width:480px) {
+  .footer-icon img {
+    width: 20px;
+    padding-bottom: 7px;
+  }
+
+  footer {
+    height: 37px !important;
+  }
+
+  .global-section {
+    padding-left: 0;
+  }
+
+  header form {
+    position: absolute;
+    left: 0;
+    background: #fff;
+    top: 7vh;
+    padding: 0px 10px;
+    display: flex;
+    /* flex-direction: column; */
+    width: 100%;
+    flex-direction: column;
+  }
+
+  header .navbar-toggler {
+    position: absolute;
+    right: 2%;
+  }
+
+  footer .tabs-group {
+    display: flex;
+    justify-content: space-around;
+    padding-bottom: 10px;
+  }
+
+  .footer-logo img {
+    width: 100%;
+  }
+
+  footer .tabs-group img {
+    height: 25px !important;
+    width: 25px !important;
+    margin-left: 10px;
+    margin-right: 10px;
+  }
+
+  #verification-study .study-card {
+    margin: 6px 17px;
+  }
+
+  header .user-icon {
+    width: 20%;
+  }
+}
+
+/* ----------- iPad 1, 2, Mini and Air ----------- */
+
+
+/* Portrait */
+@media only screen and (min-device-width: 768px) and (max-device-width: 1024px) and (orientation: portrait) and (-webkit-min-device-pixel-ratio: 1) {
+  .global-section {
+    padding-left: 0 !important;
+  }
+
+  #verification-study .image-section .main-image {
+    height: 25vh !important;
+  }
+
+  #verification-study .multiple-images {
+    max-height: 25vh !important;
+  }
+}
+
+/* Landscape */
+@media only screen and (min-device-width: 768px) and (max-device-width: 1024px) and (orientation: landscape) and (-webkit-min-device-pixel-ratio: 1) {
+
+  #study-card-wrapper {
+    width: 45%;
+  }
+
+  #verification-study .ellipsis {
+    width: 68% !important;
+  }
+
+  #verification-study .multiple-images .image {
+    height: 70px !important;
+    width: 70px !important;
+  }
+}
+
+/* ----------- iPad Pro 10.5" ----------- */
+/* Portrait */
+@media only screen and (min-device-width: 834px) and (max-device-width: 834px) and (orientation: portrait) and (-webkit-min-device-pixel-ratio: 2) {
+  .global-section {
+    padding-left: 0 !important;
+  }
+}
+
+/* Landscape */
+@media only screen and (min-device-width: 1112px) and (max-device-width: 1112px) and (orientation: landscape) and (-webkit-min-device-pixel-ratio: 2) {}
+
+/* .um-alert-error {
+  padding: 20px;
+  background-color: #f3d0d0;
+  color: #1d1a1a;
+  position: fixed;
+  z-index: 1300;
+  right: 2%;
+  top: 1%;
+  border-left: 5px solid #e00a0a;
+  border-radius: 5px;
+
+}
+.um-alert-success {
+  padding: 20px;
+  background-color: #c3e4b8;
+  color: #1d1a1a;
+  position: fixed;
+  z-index: 1300;
+  right: 2%;
+  top: 1%;
+  border-left: 5px solid #64bc45;
+  border-radius: 5px;
+
+} */
+
+.closebtn {
+  margin-left: 15px;
+  color: #fff !important;
+  font-weight: bold;
+  float: right;
+  font-size: 22px;
+  line-height: 20px;
+  cursor: pointer;
+  transition: 0.3s;
+}
+
+.closebtn:hover {
+  color: #fff !important;
+}
+
+button:disabled {
+  cursor: not-allowed !important;
+  opacity: 0.4 !important;
+}
+
+button:disabled:hover {
+  opacity: 0.4 !important;
+}
+
+.p-paginator-page {
+  min-width: auto !important;
+}
+
+.p-paginator-pages button.p-highlight {
+  background-color: #EA2427;
+  border-radius: 50px;
+  padding: 2px 8px;
+  color: #fff;
+  cursor: pointer;
+  margin-left: 0px !important;
+  margin-right: 0px !important;
+}
+
+.p-paginator-element {
+  margin-left: 5px;
+  margin-right: 5px;
+  cursor: pointer;
+  font-size: 12px;
+}
+
+.p-paginator .p-paginator-pages .p-paginator-page {
+  height: auto !important;
+}
+
+.p-paginator .p-paginator-pages .p-paginator-page:not(.p-highlight):hover {
+  background-color: #EA2427;
+  border-radius: 50px;
+  padding: 5px 10px;
+  color: #fff;
+  cursor: pointer;
+  margin-left: 0px !important;
+  margin-right: 0px !important;
+}
+
+.p-paginator-pages button.p-ripple {
+  margin-left: 10px;
+  margin-right: 10px;
+}
+
+.p-dropdown-items-wrapper ul li {
+  text-align: center;
+}
+
+.p-paginator-pages .p-dropdown-label {
+  margin-right: 5px;
+  font-size: 12px;
+}
+
+.p-paginator {
+  justify-content: center;
+  /* padding-right: 10px; */
+}
+
+.p-dropdown-items-wrapper ul {
+  padding-left: 10px;
+  padding-right: 10px;
+  background-color: #fff;
+  font-size: 12px;
+  padding-top: 5px;
+  padding-bottom: 5px;
+}
+
+.p-dropdown-items-wrapper ul li {
+  margin-top: 2px;
+  transition: 0.2s;
+}
+
+.p-dropdown-items-wrapper ul li:hover {
+  color: #EA2427;
+  transition: 0.2s;
+}
+
+.p-datepicker table td>span {
+  width: 20px !important;
+  height: 20px !important;
+}
+
+.p-datepicker-group td {
+  padding: 5px !important;
+  font-size: 10px;
+}
+
+.p-datepicker-group th {
+  padding: 5px !important;
+  font-size: 10px;
+}
+
+.p-datepicker-title {
+  padding: 0;
+  font-size: 10px;
+}
+
+.p-datepicker-title button {
+  padding: 0;
+}
+
+.ng-trigger-overlayAnimation {}
+
+.create-std .p-calendar .p-inputtext {
+  font-size: 12px;
+  outline: none;
+  height: 25px;
+  border-radius: 2px;
+  padding: 0px 5px;
+  border: 1px solid #333;
+  margin: 0;
+  width: 100%;
+}
+
+.create-std .p-element {
+  width: 100% !important;
+}
+
+.create-std .p-element span {
+  width: 100% !important;
+}
+
+.p-calendar .p-inputtext {
+  font-size: 12px;
+  outline: none;
+  height: 25px;
+  border-radius: 2px;
+  padding: 0px 5px;
+  border: 1px solid red;
+  margin: 0;
+}
+
+.rpt-date .p-calendar .p-inputtext {
+
+  border: 1px solid #333;
+
+}
+
+.no-border-date .p-element,
+.no-border-date .p-element span {
+  width: 100%;
+}
+
+.no-border-date .p-calendar .p-inputtext {
+  width: 100%;
+  border: 1.3px solid;
+}
+
+.p-datepicker .p-datepicker-header {
+  padding: 0 !important;
+}
+
+.ng-prime-elements .p-multiselect {
+  width: 100%;
+  border: 1px solid #EA2427;
+  padding-top: 0px;
+  padding-bottom: 0px;
+}
+
+.add-req-patient .p-multiselect {
+  border: 1px solid #333 !important;
+}
+
+.ng-prime-elements .p-dropdown {
+  width: 100%;
+  border: 1px solid #EA2427;
+  padding-top: 0px;
+  padding-bottom: 0px;
+}
+
+.ng-prime-elements .p-dropdown span {
+  padding-top: 4.5px;
+  padding-bottom: 4.5px;
+  font-size: 12px;
+  color: #6c757db5;
+}
+
+.ng-prime-elements input {
+  border: 1px solid #EA2427;
+  border-radius: 3px;
+  padding-top: 4.5px;
+  padding-bottom: 4.5px;
+  padding-left: 5px;
+  font-size: 12px;
+}
+
+.ng-prime-elements .p-multiselect-label {
+  padding-top: 5px;
+  padding-bottom: 5px;
+  font-size: 12px;
+  letter-spacing: 0.5px;
+}
+
+.ng-prime-elements .p-multiselect:focus-visible,
+.ng-prime-elements input {
+  outline: none;
+}
+
+.ng-prime-elements .p-multiselect-filter-container .p-inputtext {
+  padding-bottom: 5px;
+  padding-top: 5px;
+  font-size: 12px;
+}
+
+.ng-prime-elements ul[role="listbox"] {
+  padding-left: 0px;
+  margin-bottom: 0px;
+}
+
+.ng-prime-elements ul[role="listbox"] li {
+  font-size: 12px;
+  text-align: left;
+  color: #333;
+}
+
+.ng-prime-elements ul[role="listbox"] li span {
+  color: #333;
+}
+
+.ng-prime-elements .header-contextual-panel-height ul[role="listbox"] li {
+  padding-right: 0px;
+}
+
+.ng-prime-elements .p-checkbox {
+  /* width: 10px;
+  height: 10px; */
+}
+
+.ng-prime-elements .p-multiselect-items-wrapper {
+  max-height: 120px !important;
+}
+
+.ng-prime-elements label {
+  font-size: 12px;
+}
+
+.ng-prime-elements .p-radiobutton {
+  width: 21px;
+  height: 10px;
+  margin-bottom: 10px;
+  margin-right: 5px;
+}
+
+.ng-prime-elements .p-radiobutton .p-radiobutton-box.p-highlight {
+  border-color: #EA2427;
+  background: #EA2427;
+}
+
+.ng-prime-elements .last-section .p-dropdown span {
+  padding-right: 0px;
+}
+
+.search-input-fields-wrapper .col-xxl-2 {
+  width: 20% !important;
+}
+
+.p-dropdown:not(.p-disabled).p-focus {
+  box-shadow: none !important;
+  border: 1px solid #ced4da;
+}
+
+#emailFax input {
+  height: 25px;
+  border: 1px solid #EA2427;
+}
+
+#emailFax button {
+  height: 25px;
+  width: 25px;
+  background-color: #EA2427;
+  border: none;
+}
+
+#emailFax ul {
+  width: 200px;
+  padding: 0;
+}
+
+#emailFax input:focus {
+  box-shadow: none !important;
+}
+
+#emailFax .p-autocomplete {
+  width: 100%;
+}
+
+/* .ng-prime-elements .weeks-dropdown .p-dropdown span{
+  font-size: 10px !important;
+} */
+
+.ng-prime-elements .p-dropdown .p-dropdown-clear-icon {
+  right: 26px !important;
+}
+
+.p-paginator .p-dropdown {
+  height: 1.5rem;
+}
+
+.p-dropdown .p-dropdown-label {
+  font-size: 12px;
+  font-weight: 600;
+  padding: 0;
+  padding-left: 8px;
+  color: #6c757d;
+}
+
+.header-compare {
+  font-size: 16px !important;
+  text-transform: uppercase !important;
+}
+
+
+@media print {
+  .header-fields-label {
+    font-size: 13px !important;
+  }
+}
+
+.cstm-select .p-dropdown-label {
+  font-size: 10px !important;
+}
+
+#ptht #emailFax .custm-ph-input input,
+.custm-ph-input input,
+#emailFax input,
+#emailFax textarea {
+  padding-left: 3px !important;
+  font-size: 12px !important;
+}
+
+.cstm-input-wrapper span {
+  width: 100% !important;
+}
+
+.rep-wrapper .p-autocomplete-loader {
+  display: none !important;
+}
+
+.p-paginator {
+  padding: 0;
+}
+
+.fax-log-section .to-date-picker .p-datepicker {
+  top: -235px !important;
+}
+
+.fax-log-section .from-date-picker .p-datepicker {
+  top: -235px !important;
+}
+
+.select-fax-num input {
+  width: 100% !important;
+}
+
+.rpt-date span,
+.rpt-date input {
+  width: 100%;
+}
+
+.selected-row {
+  border-top: 2px solid #333;
+  border-bottom: 2px solid #333;
+}
+
+.to-from-date-wrapper .p-element span {
+  width: 100%;
+}
+
+#emailFax ul li {
+  padding-left: 6px;
+  font-size: 13px;
+  text-align: left;
+}
+
+#emailFax ul {
+  margin-bottom: 0;
+}
+
+.nembots-color {
+  fill: #EA2427 !important;
+}
+
+.umd-dropdown-wrapper label {
+  width: 100%;
+}
+
+.umd-dropdown-wrapper .p-element {
+  width: 100%;
+  display: block;
+  color: #333;
+}
+
+.umd-dropdown-wrapper .p-element div.p-component {
+  display: block;
+  width: 100%;
+  height: 25px;
+}
+
+.add-company-form-wrapper .p-element div.p-inputwrapper {
+  border: 1px solid #333;
+
+}
+
+.add-new-fixed-row .p-element div.p-inputwrapper,
+.umd-table-in-list .p-element div.p-inputwrapper {
+  border: 1px solid #333;
+}
+
+.add-company-form-wrapper .umd-autocomplete-wrapper .p-autocomplete input {
+  border-radius: 3px !important;
+  border-bottom: 1px solid #333;
+}
+
+/* .umd-dropdown-wrapper .p-element {
+  position: relative;
+  height: 100%;
+} */
+.umd-add-form-section .umd-dropdown-wrapper .p-element {
+  height: auto !important;
+  font-size: 12px;
+  font-weight: 450;
+  color: #333;
+}
+
+.umd-add-form-section p-dropdown[optionlabel="label"] div:nth-child(1) {
+  border: 1px solid #535353;
+}
+
+.umd-add-form-section .p-element:nth-child(2) {
+  /* border:1px solid #535353; */
+  border-radius: 3px;
+}
+
+.mandatory-field .p-element div.p-component,
+.umd-add-form-section .mandatory-field .p-element:nth-child(2) {
+  border-color: #F7B200 !important;
+  stroke: #F7B200;
+  background-color: #fff;
+}
+
+.completed-field .p-element div.p-component,
+.umd-add-form-section .completed-field .p-element:nth-child(2) {
+  border-color: #38B66E !important;
+  stroke: #38B66E;
+  background-color: #38b66e29;
+}
+
+.error-field .p-element div.p-component {
+  border-color: #EA2427 !important
+}
+
+.umd-dropdown-wrapper .p-element div.p-component .p-dropdown-trigger {
+  position: absolute;
+  top: 0;
+  right: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-top: 3px;
+
+}
+
+.umd-dropdown-wrapper .p-dropdown-items-wrapper {
+  border: 1px solid #dcdcdc;
+}
+
+.umd-dropdown-wrapper .p-dropdown-items-wrapper .p-dropdown-trigger {
+  display: flex;
+  align-items: center;
+  position: relative;
+}
+
+.umd-dropdown-wrapper .p-element div.p-component .p-dropdown-trigger .p-dropdown-trigger-icon {
+  /* background-color: red !important; */
+  position: absolute;
+  top: 1px;
+  right: 5px;
+}
+
+.umd-dropdown-wrapper .p-dropdown-items-wrapper ul {
+  padding-right: 0px;
+  padding-left: 0px;
+  margin-bottom: 0px;
+}
+
+.umd-dropdown-wrapper .p-dropdown-items-wrapper ul li {
+  text-align: left;
+}
+
+.umd-dropdown-wrapper .p-dropdown-items-wrapper ul li span {
+  white-space: normal !important;
+}
+
+.umd-dropdown-wrapper .p-dropdown-label {
+  white-space: nowrap;
+  overflow: hidden;
+  flex: 1 1 auto;
+  width: 86% !important;
+  text-overflow: ellipsis;
+  cursor: pointer;
+  line-height: 23px;
+  font-size: 12px;
+}
+
+.umd-dropdown-wrapper .p-dropdown-panel {
+  box-shadow: none !important;
+}
+
+.umd-autocomplete-wrapper .p-autocomplete,
+.umd-autocomplete-wrapper .p-autocomplete input {
+  width: 100%;
+  height: 25px;
+  box-shadow: none !important;
+  font-size: 12px;
+  color: #333;
+  font-weight: 600;
+}
+
+.umd-add-form-section .umd-autocomplete-wrapper .p-autocomplete input {
+  border: 1.3px solid #535353;
+}
+
+.umd-autocomplete-wrapper .p-autocomplete input:focus-visible,
+.umd-autocomplete-wrapper .p-autocomplete input:hover {
+  outline: none !important;
+  border: 1px solid #dcdcdc;
+}
+
+.umd-autocomplete-wrapper .p-autocomplete-panel {
+  box-shadow: none !important;
+}
+
+.umd-autocomplete-wrapper .p-autocomplete-panel ul {
+  padding-right: 0px;
+  padding-left: 0px;
+  border: 1px solid #dcdcdc;
+}
+
+.umd-autocomplete-wrapper .p-autocomplete-panel ul li {
+  font-size: 12px;
+}
+
+.umd-error-wrapper .p-inputwrapper {
+  border: 0.2px solid #EA2427;
+  border-radius: 3px;
+}
+
+.umd-error-wrapper .p-inputwrapper .p-dropdown-label {
+  color: #EA2427;
+}
+
+.umd-autocomplete-wrapper .p-overlay {
+  width: 100% !important;
+}
+
+.umd-autocomplete-wrapper .p-autocomplete-panel ul li span {
+  white-space: normal !important;
+}
+
+.umd-add-form-section p-overlay .p-overlay {
+  border: none !important;
+}
+
+.umd-add-form-section .p-dropdown-panel,
+.umd-add-form-section .p-overlay-content {
+  border: none !important;
+}
+
+.umd-add-form-section .umd-dropdown-wrapper .p-dropdown {
+  border: 1px solid !important;
+}
+
+.add-facility-contact-wrapper .p-inputwrapper {
+  padding: 0px !important;
+  height: 30px;
+  vertical-align: middle;
+  width: 100%;
+}
+
+.add-facility-contact-wrapper .p-dropdown .p-dropdown-label {
+  line-height: 24px;
+}
+
+.filter-upload-inner-content .ng-prime-elements .p-dropdown span {
+  padding-top: 4.5px;
+  padding-bottom: 4px !important;
+  font-size: 12px;
+  color: #6c757db5;
+  line-height: 14px !important;
+}
+
+.oxygen-app .p-paginator-pages button.p-highlight {
+  background-color: #409EDA;
+}
+
+.add-requisition-form .p-datepicker-trigger {
+  height: 25px;
+  width: 25px;
+}
+
+#collapsereqDCX1 .autocomplete-dropdown {
+  top: 100% !important;
+}
+
+.req-form-dpicker .p-inputwrapper {
+  width: 100% !important;
+}
+
+.req-form-dpicker .p-datepicker-trigger {
+  display: none !important;
+}
+
+.add-requisition-form .p-calendar .p-inputtext {
+  border-color: #F7B200;
+  stroke: #F7B200;
+  background-color: #f7b2000d;
+  box-shadow: none !important;
+}
+
+.add-requisition-form .p-calendar .p-datepicker-trigger {
+  display: none !important;
+}
+
+.add-requisition-form .error-field .p-calendar .p-inputtext {
+  border-color: #EA2427 !important;
+
+  color: #EA2427;
+}
+
+.phy-add-req .p-calendar .p-inputtext {
+  border: 1px solid #333;
+}
+
+/* All Contextual panel oxygen styling starts here */
+/* DO NOT TOUCH THIS */
+.oxygen-app .header-compare {
+  border-bottom: 1px solid #409EDA !important;
+  background-color: #c3e8ff !important;
+}
+
+.oxygen-app .o-common-contextual-panel-wrapper .accordion-button {
+  background-color: #c3e8ff !important;
+}
+
+.oxygen-app .user-profile-panel-wrapper .header-contextual-panel-height #contactual-panel-accordian .accordion-body {
+  border: 1px solid #fff !important
+}
+
+.oxygen-app .o-common-contextual-panel-wrapper .user-profile-panel-wrapper .accordion-header button {
+  background-color: #fff !important;
+}
+
+.oxygen-app .border-bottom-red {
+  border-bottom: 1px solid #409EDA !important;
+  color: #409EDA !important;
+}
+
+.oxygen-app .filter-row label {
+  color: #409EDA !important;
+}
+
+.oxygen-app .edit-panel-height .input-group {
+  border-left: 1px solid #409EDA !important;
+}
+
+.oxygen-app .search-input-fields-wrapper .date-below {
+  border-left: 1px solid #409EDA !important;
+}
+
+.oxygen-app .search-input-fields-wrapper .second-date {
+  border-right: 1px solid #409EDA !important;
+}
+
+.oxygen-app .search-input-fields-wrapper .form-control {
+  border: 1px solid #409EDA !important;
+}
+
+.oxygen-app .indicator-wrapper {
+  border-top: 1px solid #409EDA !important;
+  border-right: 1px solid #409EDA !important;
+  border-bottom: 1px solid #409EDA !important;
+  cursor: pointer;
+}
+
+.oxygen-app .header-contextual-panel-height .filter-row:nth-child(even) {
+  background-color: #f2faff !important;
+}
+
+.oxygen-app .footer-contextual-panel {
+  border-bottom: 1px solid #409EDA !important;
+  background-color: #c3e8ff !important;
+}
+
+.oxygen-app .o-common-contextual-panel-wrapper .btn-danger {
+  background: #409eda !important;
+  border: none !important;
+}
+
+.oxygen-app .contextual-panel-closeBtn {
+  background-color: #409eda !important;
+}
+
+.oxygen-app .selected-field-wrapper {
+  border: 1px solid #409eda !important;
+}
+
+.oxygen-app .ng-prime-elements input {
+  border: 1px solid #409eda !important;
+}
+
+.oxygen-app .o-common-contextual-panel-wrapper .accordion-header button {
+  border-bottom: 1px solid #409eda !important;
+}
+
+.oxygen-app .btn-submit-query {
+  background-color: #409eda !important;
+}
+
+.oxygen-app .um-header-form-field .bg-red {
+  background-color: #409eda !important;
+}
+
+.oxygen-app .umd-form-wrapper .form-check-input:checked {
+  background-color: #409eda !important;
+  border-color: #409eda !important;
+}
+
+.oxygen-app .umd-form-wrapper .notification-badge {
+  background: #409eda !important;
+}
+
+.oxygen-app .umd-form-wrapper .archive-section {
+  background-color: #c3e8ff !important;
+  border-top: 1px solid #409eda !important;
+}
+
+.oxygen-app .compose-message-section .text-danger {
+  color: #409eda !important;
+}
+
+.oxygen-app .ng-prime-elements .p-multiselect {
+  border: 1px solid #409eda !important;
+}
+
+.oxygen-app .ng-prime-elements .p-dropdown {
+  border: 1px solid #409eda !important;
+}
+
+.oxygen-app .ng-prime-elements .p-radiobutton .p-radiobutton-box.p-highlight {
+  border-color: #409eda !important;
+  background: #409eda !important;
+}
+
+.oxygen-app .loader {
+  border-bottom-color: #409eda !important;
+}
+
+.oxygen-app .umd-table table thead th {
+  background-color: #409EDA !important;
+}
+
+.oxygen-app .total-count-row {
+  background-color: #c3e8ff !important;
+}
+
+.oxygen-app .table-divr {
+  background: #409eda !important;
+}
+
+.oxygen-app .global-section small.cursor-pointer {
+  color: #409EDA !important;
+}
+
+.oxygen-app .address-section-wrapper .row div:nth-child(even) {
+  background-color: #c3e8ff !important;
+}
+
+.oxygen-app .prev-section div:nth-child(odd) {
+  background-color: #c3e8ff !important;
+}
+
+.oxygen-app .prev-section div:nth-child(even) {
+  background-color: #fff !important;
+}
+
+.oxygen-app .header-edit {
+  background: #c3e8ff !important;
+  border-bottom: 1px solid #409eda !important;
+}
+
+.oxygen-app .display-selected-data * {
+  color: #409eda !important;
+}
+
+.oxygen-app .umd-edit-form-wrapper label {
+  color: #409eda !important;
+}
+
+.oxygen-app .umd-edit-form-wrapper input,
+.oxygen-app .umd-edit-form-wrapper textarea,
+.oxygen-app .umd-edit-form-wrapper select {
+  background-color: #f0f9ff !important;
+}
+
+.oxygen-app .umd-form-dropdown a {
+  background: #f0f9ff !important;
+}
+
+.oxygen-app .header-contextual-panel-height #contactual-panel-accordian .accordion-body {
+  border: 1px solid #409eda !important;
+}
+
+.oxygen-app .show-info-worklist-wrapper .header-contextual-panel-height #contactual-panel-accordian .accordion-body {
+  border: 1px solid #fff !important;
+}
+.oxygen-app .wkl-ppr-upld .available-files-section {
+  border-left: 1px solid #409eda !important;
+  border-right: 1px solid #409eda !important;
+}
+.oxygen-app .available-files-section input,
+.oxygen-app .attached-files-section input {
+  background-color: #f0f9ff !important;
+  border-bottom: 1px solid #409eda !important;
+}
+
+.oxygen-app .scrollable-content-header {
+  border-bottom: 1px solid #409eda !important;
+}
+
+.oxygen-app .scrollable-content ul li:nth-child(odd),
+.oxygen-app .scrollable-content ul li:nth-child(odd) div {
+  background-color: #f0f9ff !important;
+}
+.oxygen-app .scrollable-content ul li:nth-child(odd) .file-related-data-selected,
+.oxygen-app .scrollable-content ul li:nth-child(even) .file-related-data-selected,
+.oxygen-app .scrollable-content ul li:nth-child(odd) .file-related-data-selected div.attached-file-name-ellipses,
+.oxygen-app .scrollable-content ul li:nth-child(even) .file-related-data-selected div.attached-file-name-ellipses {
+    background: #409EDA !important;
+}
+
+
+.oxygen-app .scrollable-content ul li:nth-child(even),
+.oxygen-app .scrollable-content ul li:nth-child(even) div {
+  background-color: #e2f3fe !important;
+}
+
+.oxygen-app .prev-section div:nth-child(odd) {
+  background-color: #c3e8ff !important;
+}
+
+.oxygen-app .prev-section div:nth-child(even) {
+  background-color: #fff !important;
+}
+
+.oxygen-app .prev-section .file-related-data-selected {
+  background-color: #409eda !important;
+  color: #fff !important;
+}
+
+.oxygen-app .scrollable-content ul li:nth-child(even)  {
+  background-color: #e2f3fe !important;
+}
+
+.oxygen-app .scrollable-content ul li:nth-child(odd)  {
+  background-color: #f0f9ff !important;
+}
+
+.oxygen-app .umd-atews-form-wrapper input {
+  background-color: #f0f9ff !important;
+}
+
+.oxygen-app .umd-atews-form-wrapper label {
+  color: #409eda !important;
+}
+
+.oxygen-app .verification-header {
+  border-bottom: 1px solid #409eda !important;
+}
+
+.oxygen-app .verification-header li button {
+  border: 1px solid #409eda !important;
+}
+
+.oxygen-app .verification-header li button.active {
+  background-color: #409eda !important;
+
+  border: 1px solid #409eda !important;
+}
+
+.oxygen-app .modality-list {
+  border-left: 1px solid #409eda !important;
+  border-bottom: 1px solid #409eda !important;
+  border-right: 1px solid #409eda !important;
+}
+
+.oxygen-app .modality-list li:hover {
+  background-color: #409eda !important;
+}
+
+.oxygen-app .o-common-contextual-panel-wrapper .dynamic-row-patient-details {
+  border-bottom: 1px solid #409eda !important;
+}
+
+.oxygen-app .o-common-contextual-panel-wrapper .dynamic-row-patient-details p b {
+  color: #409eda !important;
+}
+
+.o-common-contextual-panel-wrapper .compose-message-section label {
+  text-align: left !important;
+}
+.see-more-text{
+color: #EA2427;
+}
+.oxygen-app .see-more-text{
+color: #409eda !important;
+}
+.oxygen-app .contextual-panel-openBtn{
+background-color: #409eda !important;
+}
+.oxygen-app .title-row{
+  border-bottom: 1px solid #409eda !important;
+}
+.oxygen-app .section-separator .btn-color{
+  background-color: #409eda !important;
+}
+.oxygen-app .section-separator{
+  border-right: 2px dashed #409eda !important;
+}
+.oxygen-app .comparison-list-card{
+background: #409eda1f !important;
+    border-left: 5px solid #409eda !important;
+}
+.oxygen-app .discussion-list-wrapper div.pb-2{
+    background-color: #409eda1f !important;
+    border-top: 1px solid #409eda1f !important;
+}
+.oxygen-app .discussion-list-wrapper label{
+color: #409eda !important;
+}
+.oxygen-app .umd-form-wrapper label{
+color: #409eda !important;
+}
+
+.oxygen-app .pat-history-wkl .pt-history-cpanel .top-row{
+background-color: #409eda !important;
+}
+.oxygen-app .pat-history-wkl #report-email-fax .nav-tabs .nav-link.active{
+border: 1px solid #409eda !important;
+    background-color: #409eda !important;
+}
+.oxygen-app #report-email-fax h6{
+    background-color: #c3e8ff !important;
+    color: #409EDA !important;
+}
+.oxygen-app #emailFax input{
+    border: 1px solid #409EDA !important;
+}
+.oxygen-app .pat-history-wkl #emailFax button{
+      background-color: #409EDA !important;
+}
+.oxygen-app .pat-history-wkl .pt-history-cpanel li{
+    border: 1px solid #409EDA !important;
+}
+.oxygen-app .pat-history-wkl .compare-name-ellipses-ind-remark{
+  color: #409EDA !important;
+}
+.oxygen-app .pat-history-wkl .search-input-fields-wrapper input{
+border: 1px solid #409eda !important;
+}
+
+.oxygen-app #report-email-fax .nav-tabs{
+border-bottom: 1px solid #409EDA !important;
+}
+.oxygen-app #report-email-fax .nav-tabs .nav-link:hover{
+    border: 1px solid #409EDA !important;
+}
+.oxygen-app .mail-footer{
+border-top: 1px solid #409EDA !important;
+}
+.oxygen-app #rateReport p{
+    background-color: #c3e8ff !important;
+}
+.oxygen-app #rateReport ol li{
+    background-color: #fff !important;
+}
+.oxygen-app #rateReport button{
+     background-color: #409EDA !important;
+}
+.oxygen-app #rateReport ol li:nth-child(even){
+      background-color: #c3e8ff !important;
+}
+.oxygen-app p.text-danger small{
+color: #409EDA !important;
+}
+/* .oxygen-app .col-xxl-11 .row div:nth-child(1){
+      background-color: #409EDA !important;
+    border-right: 1px dashed #409EDA !important;
+} */
+
+.oxygen-app .umd-table .table thead th{
+    background-color: #409eda !important;
+}
+.oxygen-app .table-divr{
+    background: #409eda !important;
+}
+.oxygen-app .table-responsive tbody tr:nth-child(odd) td{
+    background-color: #f2faff !important;
+}
+.oxygen-app .table-responsive tbody tr:nth-child(even) td{
+    background-color: #def2ff !important;
+}
+.oxygen-app .p-paginator-pages button.p-highlight{
+    background-color: #409EDA !important;
+}
+.oxygen-app .p-paginator .p-paginator-pages .p-paginator-page:not(.p-highlight):hover{
+    background-color: #409EDA !important;
+}
+.oxygen-app .form-check-input:checked{
+background-color: #409EDA !important;
+}
+.oxygen-app #report-email-fax .nav-tabs .nav-link.active{
+    border: 1px solid #409EDA !important;
+    background-color: #409EDA !important;
+}
+.oxygen-app #emailFax button {
+
+  background-color: #409EDA !important;
+
+}
+.oxygen-app .group-by-header{
+    background: #409eda !important;
+}
+.oxygen-app .add-user label{
+color: #333 !important;
+}
+.oxygen-app .add-user .umd-form-wrapper .accordion-button{
+        background: #c3e8ff !important;
+}
+ .oxygen-app .add-user .form-header-progress-wrapper .progress-bar-filled{
+background-color: #409eda !important;
+}
+ .oxygen-app .add-user .form-header-progress-wrapper .progress-bar-bg{
+    border: 1px solid #409EDA !important;
+}
+ .oxygen-app .add-user .form-header-progress-wrapper .progress-bar-pc{
+background-color: #409EDA !important;
+}
+ .oxygen-app .add-user .umd-form-wrapper .accordion-button{
+    border-bottom: 1px solid #409EDA !important;
+}
+ .oxygen-app .add-user .btn-submit-form{
+    background-color: #409EDA !important;
+}
+ .oxygen-app .add-user .bg-color{
+    background-color: #409EDA !important;
+}
+.oxygen-app  .group-by-facility-wrapper .chip{
+    background-color: #f2faff !important;
+    border: 1px solid #409EDA !important;
+}
+.oxygen-app  #set-region-zone-section .btn-submit-form,
+.oxygen-app #manageRegionSectionCollapse .btn-submit-form,
+.oxygen-app .region-zone-form-section .btn-submit-form{
+    background-color: #409EDA !important;
+}
+.oxygen-app  #manageRegionSectionCollapse .row div:nth-child(even),
+.oxygen-app .region-zone-form-section .row div:nth-child(even){
+  background-color: #fff !important;
+}
+.oxygen-app .region-zone-list-wrapper li{
+      border-left: 4px solid #409EDA !important;
+}
+
+.oxygen-app .dynamic-row-content .add-new-row:nth-child(odd){
+background-color: #f2faff !important;
+}
+.oxygen-app .dynamic-row-content .add-new-row:nth-child(even){
+background-color: #DEF2FF !important;
+}
+.oxygen-app .dynamic-row-content span.text-danger{
+color: #409EDA !important;
+}
+.oxygen-app .accordion-flush .umd-form-dropdown ul{
+        background: #f0f9ff !important
+}
+.oxygen-app .notification-panel-wrapper .pt-history-cpanel .top-row{
+background: #409eda !important;
+}
+.oxygen-app .notification-panel-wrapper .accordion-body ul li{
+    border-bottom: 1px solid #409eda !important;
+    border: 1px solid #409eda !important;
+}
+.oxygen-app .notification-panel-wrapper .notif-red-text{
+color: #333 !important;
+}
+.oxygen-app .notification-panel-wrapper .text-danger{
+color: #409eda !important;
+}
+.oxygen-app .um-tab-style li{
+  border: 1px solid #409eda !important;
+}
+.oxygen-app .um-tab-style li button.active{
+    background-color: #409eda !important;
+    color: #fff !important;
+    border: 1px solid #409eda !important;
+}
+.oxygen-app .um-tab-style li button{
+    color: #409eda !important;
+}
+.oxygen-app .nembot-status-on{
+background-color: #def2ff !important;
+border: 1px solid #409eda !important;
+}
+.oxygen-app .add-user .btn-preview-image{
+    border: 1px solid #409eda !important;
+    color: #409eda !important;
+}
+.oxygen-app .generate-pwd{
+fill: #409eda !important;
+}
+.oxygen-app .p-calendar .p-inputtext{
+border: 1px solid #409eda !important;
+}
+.oxygen-app .loader{
+
+}
+header .um-count-badge{
+  margin-top: 2px !important;
+}
+.oxygen-app .nembots-section{
+    border-bottom: 1.5px solid #409eda !important;
+}
+.oxygen-app .border-right-red{
+    border-right: 1.5px solid #409eda !important;
+}
+   .oxygen-app .search-input-fields-wrapper .date-below{
+    border-left: 1px solid #409eda !important;
+    }
+.oxygen-app .study-date-verification-filter div.input-group{
+    border-left: 1px solid #409eda !important;
+}
+.oxygen-app .acc-body-wrapper .accordion-body .img-list li img.selected-image{
+  border: 3px solid #409eda !important;
+}
+.oxygen-app .search-input-fields-wrapper .form-control{
+    border: 1px solid #409EDA !important;
+}
+.oxygen-app .search-input-fields-wrapper .second-date{
+    border-right: 1px solid #409EDA !important;
+}
+ .oxygen-app .search-input-fields-wrapper .date-below {
+        border-left: 1px solid #409EDA !important;
+    }
+   .oxygen-app.select-for-comp{
+        border: 4px solid #409EDA !important;
+
+    }
+   .oxygen-app .notification-panel-wrapper .accordion-body ul li{
+      border: none !important;
+    }
+   .oxygen-app .notification-panel-wrapper .accordion-body li.w-100{
+        border-bottom: 1px solid #409EDA !important;
+                border-left: 1px solid #409EDA !important;
+    }
+   .oxygen-app .notification-panel-wrapper #collapseThird ul li{
+border-bottom: 1px solid #409EDA !important;
+    }
+.oxygen-app .file-related-data-selected{
+    background: #409EDA !important;
+}
+
+.oxygen-app .toggle-row-report table tr{
+    background-color: #c3e8ff !important;
+}
+.oxygen-app  .new1-study td{
+    background-color: #f1f1f1 !important;
+}
+.oxygen-app  .verified-study td{
+    background-color: #FFFBEE !important;
+}
+.oxygen-app  .ready-to-send-study td{
+    background-color: #EDF7FF !important;
+}
+.oxygen-app  .tabular-view-content td{
+    background-color: #f1f1f1 !important;
+}
+ @media (min-width: 1440px) {
+       .oxygen-app .notification-panel-wrapper .compare-name-ellipses-ind-remark{
+        white-space: nowrap;
+        width: 345px !important;
+        overflow: hidden;
+        text-overflow: ellipsis;
+        margin-bottom: 0;
+    }
+}
+.oxygen-app .select-for-comp{
+    border: 4px solid #409EDA !important;
+}
+.oxygen-app .study-height .selected-list{
+background-color: #87b5d2 !important;
+ color: #fff !important;
+}
+.oxygen-app .gt-section td{
+  color: #333 !important;
+}
+.oxygen-app .middle-section{
+    border-left: 1px solid #409EDA !important;
+    border-right: 1px solid #409EDA !important;
+}
+
+.save-btn{
+    border-radius: 2px;
+    padding: 4px 13px;
+    letter-spacing: .3px;
+    height: 30px;
+    line-height: 1;
+    font-size: 14px;
+    background-color: #ea2427;
+    border: none;
+    color: white;
+    cursor: pointer !important;
+}
+.save-btn:hover{
+    cursor: pointer !important;
+}
+
+.fw-bold{
+    font-weight: 700 !important;
+    color: #585858 !important;
+}
+html, body { height: 100%; }
+body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }
